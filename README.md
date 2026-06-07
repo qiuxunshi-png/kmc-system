@@ -1,5 +1,7 @@
 # KMC综合管理系统
 
+🌐 **GitHub 仓库：https://github.com/qiuxunshi-png/kmc-system**
+
 🌐 **公网访问地址：https://silver-ways-crash.loca.lt/login.html**
 > ⚠️ 此为临时链接，服务器重启后失效。如需固定链接，请部署至云服务器。
 
