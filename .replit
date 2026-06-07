@@ -1,0 +1,17 @@
+run = "cd server && npm install && node index.js"
+entrypoint = "server/index.js"
+
+[interpreter]
+  language = "nodejs"
+
+[env]
+  NODE_ENV = "production"
+  JWT_SECRET = "kmc-system-secret-key-2026"
+
+[nix]
+  channel = "stable-24-05"
+  packages = ["nodejs-20_x", "sqlite"]
+
+[[ports]]
+  localPort = 3001
+  externalPort = 80
