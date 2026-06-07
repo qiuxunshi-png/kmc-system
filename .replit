@@ -1,17 +1,26 @@
-run = "cd server && npm install && node index.js"
 entrypoint = "server/index.js"
 
 [interpreter]
-  language = "nodejs"
+command = [
+    "prybar-nodejs",
+    "-q",
+    "--ps1",
+    "\u0001\033[33m\u0002\u0001\033[00m\u0002 ",
+    "-i"
+]
 
-[env]
-  NODE_ENV = "production"
-  JWT_SECRET = "kmc-system-secret-key-2026"
+[[hints]]
+detection = "socket"
+[[hints]]
+detection = "shellConfig"
 
 [nix]
-  channel = "stable-24-05"
-  packages = ["nodejs-20_x", "sqlite"]
+channel = "stable-24_05"
 
-[[ports]]
-  localPort = 3001
-  externalPort = 80
+[env]
+NODE_ENV = "production"
+JWT_SECRET = "kmc-system-secret-key-2026"
+
+[deployment]
+run = ["sh", "-c", "cd server && node index.js"]
+build = ["sh", "-c", "cd server && npm install"]
