@@ -1,18 +1,5 @@
+run = "cd server && node index.js"
 entrypoint = "server/index.js"
-
-[interpreter]
-command = [
-    "prybar-nodejs",
-    "-q",
-    "--ps1",
-    "\u0001\033[33m\u0002\uea67\u0001\033[00m\u0002 ",
-    "-i"
-]
-
-[[hints]]
-detection = "socket"
-[[hints]]
-detection = "shellConfig"
 
 [nix]
 channel = "stable-24_05"
@@ -20,7 +7,3 @@ channel = "stable-24_05"
 [env]
 NODE_ENV = "production"
 JWT_SECRET = "kmc-system-secret-key-2026"
-
-[deployment]
-run = ["sh", "-c", "cd server && node index.js"]
-build = ["sh", "-c", "cd server && npm install"]
