@@ -1,0 +1,16 @@
+{
+    "name": "KMC综合管理系统",
+    "short_name": "KMC",
+    "description": "KMC Integrated Management System",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#0b1120",
+    "theme_color": "#5b8def",
+    "icons": [
+        {
+            "src": "https://cdn-icons-png.flaticon.com/512/2766/2766308.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ]
+}

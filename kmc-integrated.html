@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>KMC综合管理系统</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: 'DM Sans', 'Inter', -apple-system, sans-serif;
+            background: linear-gradient(135deg, #0b1120 0%, #151d30 100%);
+            color: #e4e9f1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .header h1 {
+            font-size: 48px;
+            font-weight: 900;
+            background: linear-gradient(135deg, #5b8def, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 10px;
+            letter-spacing: -1px;
+        }
+        
+        .header p {
+            font-size: 14px;
+            color: #8495b3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        
+        .systems-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+        }
+        
+        .system-card {
+            background: rgba(21, 29, 48, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 20px;
+            padding: 40px 30px;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .system-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.03), transparent 70%);
+            pointer-events: none;
+        }
+        
+        .system-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(91, 141, 239, 0.3);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 20px rgba(91, 141, 239, 0.15);
+        }
+        
+        .system-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .system-card:first-child .system-icon {
+            background: linear-gradient(135deg, rgba(52, 199, 123, 0.12), rgba(45, 184, 138, 0.08));
+            color: #34c77b;
+        }
+        
+        .system-card:last-child .system-icon {
+            background: linear-gradient(135deg, rgba(91, 141, 239, 0.12), rgba(167, 139, 250, 0.08));
+            color: #5b8def;
+        }
+        
+        .system-card h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .system-card:first-child h2 {
+            color: #34c77b;
+        }
+        
+        .system-card:last-child h2 {
+            color: #5b8def;
+        }
+        
+        .system-card p {
+            font-size: 13px;
+            color: #8495b3;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .system-card .badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .system-card:first-child .badge {
+            background: rgba(52, 199, 123, 0.12);
+            color: #34c77b;
+            border: 1px solid rgba(52, 199, 123, 0.2);
+        }
+        
+        .system-card:last-child .badge {
+            background: rgba(91, 141, 239, 0.12);
+            color: #5b8def;
+            border: 1px solid rgba(91, 141, 239, 0.2);
+        }
+        
+        @media (max-width: 768px) {
+            .systems-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>KMC Integrated System</h1>
+        <p>综合管理系统 - Integrated Management</p>
+    </div>
+    
+    <div class="systems-grid">
+        <div class="system-card" onclick="location.href='kmc-app-v3.html'">
+            <div class="system-icon">
+                <i class="fas fa-cubes"></i>
+            </div>
+            <h2>物资管理</h2>
+            <p>Logistics Management System<br>入库、出库、库存管理</p>
+            <div class="badge">Smart Sync v3.7</div>
+        </div>
+        
+        <div class="system-card" onclick="location.href='kmc-security.html'">
+            <div class="system-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <h2>安保管理</h2>
+            <p>Security Operations Management<br>任务、督察、SOS、记录</p>
+            <div class="badge">SiteOps V15.0</div>
+        </div>
+    </div>
+</body>
+</html>
